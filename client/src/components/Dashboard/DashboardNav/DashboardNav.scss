@@ -1,0 +1,15 @@
+@import '../../GlobalStyles/Mixins.scss';
+
+#dashboardNav {
+    width: 20%;
+    height: 100vh;
+    padding: 2em;
+    background-color: $secondary-background;
+
+    a {
+        margin-bottom: 3em;
+        display: block;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+}

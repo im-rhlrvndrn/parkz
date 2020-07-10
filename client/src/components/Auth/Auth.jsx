@@ -26,7 +26,7 @@ const Auth = (props) => {
                         <Link to='/forgotpassword'>
                             {authState === 'login' ? 'Forgot Password' : null}
                         </Link>
-                        <Link to='/auth/register'>
+                        <Link to='/auth/register' onClick={() => setAuthState('register')}>
                             {authState === 'login'
                                 ? 'Create a new account'
                                 : 'Already have an account? Login'}
@@ -34,7 +34,7 @@ const Auth = (props) => {
                     </div>
                 ) : (
                     <div className='register-list'>
-                        <Link to='/auth/login'>
+                        <Link to='/auth/login' onClick={() => setAuthState('login')}>
                             {authState === 'login'
                                 ? 'Create a new account'
                                 : 'Already have an account? Login'}

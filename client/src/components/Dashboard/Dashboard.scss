@@ -1,0 +1,9 @@
+@import '../GlobalStyles/Mixins.scss';
+
+#dashboard {
+    width: 100%;
+    min-height: 100vh;
+    max-height: max-content;
+    background-color: $primary-background;
+    @include flex();
+}
