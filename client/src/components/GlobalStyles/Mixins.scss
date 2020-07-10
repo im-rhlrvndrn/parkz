@@ -1,0 +1,95 @@
+// Colors
+$primary-background: #17171e;
+$secondary-background: #191d29;
+$ternary-background: #283042;
+$cta-background: #7ee3d9;
+$cta-primary-background: #283140;
+$cta-secondary-background: #323b4a;
+$primary-text: #c4c8d4;
+
+// Responsive breakpoints
+$tablet: 750px;
+$mobile: 500px;
+
+@mixin flexCentered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexAlignCenterSpaceBetween {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flexAlignCenter {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flexDirectionColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flexDirectionColumnVerticalSB {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@mixin defusedBtn($color, $opacity) {
+    display: block;
+    width: max-content;
+    color: $color !important;
+    padding: 1em 2em;
+    font-weight: 700;
+    background-color: rgba($color, $opacity);
+    color: $color;
+    text-transform: capitalize;
+}
+
+@mixin primaryBtn($color, $hoveredColor) {
+    display: block;
+    width: max-content;
+    color: $hoveredColor !important;
+    padding: 0 2em;
+    font-weight: 700;
+    border: 2px solid $color !important;
+    background-color: $color !important;
+    transition: 0.4s ease-in-out !important;
+    text-transform: capitalize;
+
+    &:hover {
+        // background-color: $hoveredColor !important;
+        // color: $color !important;
+        // border: 2px solid $hoveredColor !important;
+        transform: translateY(-4px);
+        box-shadow: 0 14px 10px -10px #222;
+    }
+}
+
+@mixin gridContainer($minWidth, $rowHeight) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($minWidth, 1fr));
+    grid-auto-rows: $rowHeight;
+    grid-gap: 20px;
+}
+
+@mixin tablet {
+    @media screen and (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: $mobile) {
+        @content;
+    }
+}

@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;800&display=swap');
+@import './Mixins.scss';
+
+/* width */
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+    background: $primary-background;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+    background: $cta-background;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: $primary-text;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+input:focus,
+button:focus {
+    outline: none;
+    // box-shadow: 0 0 2px blue;
+}
+
+input,
+button {
+    width: max-content;
+    min-height: 45px;
+    padding: 0 1em;
+}
+
+input {
+    border: 1px solid #222;
+}
+
+input::placeholder {
+    font-weight: 300;
+}
+
+label {
+    display: inline-block;
+    margin: 20px;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.focused {
+    transform: translate(15px, 10px) !important;
+    margin: 0 !important;
+    font-size: 0.8rem;
+    color: $cta-background;
+}
