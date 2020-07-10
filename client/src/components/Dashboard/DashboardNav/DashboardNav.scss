@@ -7,9 +7,25 @@
     background-color: $secondary-background;
 
     a {
-        margin-bottom: 3em;
+        padding: 0.8em 0;
+        margin-bottom: 1em;
         display: block;
         text-transform: capitalize;
+        transition: 0.4s;
         cursor: pointer;
+        font-weight: 300;
+
+        &:hover {
+            padding-left: 1em;
+            border-left: 2px solid $cta-background;
+            font-weight: 500;
+        }
+
+        &.active {
+            padding-left: 1em;
+            border-left: 2px solid $cta-background;
+            font-weight: 500;
+            color: $cta-background;
+        }
     }
 }
