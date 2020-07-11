@@ -6,4 +6,11 @@
     max-height: max-content;
     background-color: $primary-background;
     @include flex();
+
+    .dashboardCompWrapper {
+        width: 80%;
+        height: 100vh;
+        background: $primary-background;
+        padding: 2em;
+    }
 }

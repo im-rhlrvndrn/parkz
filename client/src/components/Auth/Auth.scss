@@ -26,77 +26,104 @@
         background-position: top;
         @include tablet {
             width: 100%;
+            // background: $primary-background;
             // background-image: url(https://images.pexels.com/photos/2811501/pexels-photo-2811501.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
             // background-size: cover;
             // background-position: center;
         }
     }
 
-    form {
-        background-color: transparent;
+    .authFormWrapper {
+        width: 30%;
         padding: 2em;
-        width: 450px;
-        // border-radius: 10px;
-
         @include tablet {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 80%;
+
+            h1 {
+                color: $primary-text;
+            }
+        }
+        @include mobile {
+            width: 90%;
         }
 
         h1 {
-            margin-bottom: 20px;
-            text-align: center;
+            margin-bottom: 1.3em;
         }
 
-        .inputContainer {
-            position: relative;
+        form {
+            background-color: transparent;
+            width: 100%;
+            @include tablet {
+                padding: 2em;
+                width: 80%;
+                background: rgba(white, 0.9);
 
-            label {
-                margin: 0;
-                position: absolute;
-                // bottom: 40px;
-                // left: 15px;
-                transform: translate(15px, 30px);
-                font-weight: 300;
-                transition: 0.4s;
-                z-index: 0;
+                * {
+                    color: $primary-background;
+                }
+            }
+            @include mobile {
+                width: 90%;
             }
 
-            input {
-                z-index: 1;
-                width: 100%;
-                background: transparent;
-                border: none;
-                border-bottom: 1px solid $primary-text;
-                margin: 20px 0;
+            h1 {
+                margin-bottom: 20px;
+                text-align: center;
             }
-        }
 
-        button {
-            cursor: pointer;
-            margin: 40px auto 20px auto;
-            @include primaryBtn($cta-background, $cta-secondary-background);
-            color: $primary-background;
-        }
+            .inputContainer {
+                position: relative;
 
-        .login-list {
-            @include flexAlignCenterSpaceBetween();
-        }
+                label {
+                    margin: 0;
+                    position: absolute;
+                    transform: translate(15px, 30px);
+                    font-weight: 300;
+                    transition: 0.4s;
+                    z-index: 0;
+                }
 
-        .register-list {
-            @include flexCentered();
-        }
+                input {
+                    z-index: 1;
+                    width: 100%;
+                    background: transparent;
+                    border: none;
+                    border-bottom: 1px solid $primary-text;
+                    margin: 20px 0;
+                }
+            }
 
-        .login-list,
-        .register-list {
-            a {
-                font-size: 0.8rem;
+            button {
+                cursor: pointer;
+                margin: 40px auto 20px auto;
+                @include primaryBtn($cta-background, $cta-secondary-background);
+                color: $primary-background;
+                @include tablet {
+                    width: 100%;
+                }
+            }
 
-                &:hover {
-                    color: $cta-background;
+            .login-list {
+                @include flexAlignCenterSpaceBetween();
+            }
+
+            .register-list {
+                @include flexCentered();
+            }
+
+            .login-list,
+            .register-list {
+                a {
+                    font-size: 0.8rem;
+
+                    &:hover {
+                        color: $cta-background;
+                    }
                 }
             }
         }
