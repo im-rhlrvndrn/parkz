@@ -11,7 +11,7 @@ const Dashboard = () => {
     const [navState, setNavState] = useState('profile');
     return (
         <div id='dashboard'>
-            <DashboardNav />
+            {/* <DashboardNav /> */}
             <div className='dashboardCompWrapper'>
                 {navState === 'profile' ? <Profile /> : null}
             </div>

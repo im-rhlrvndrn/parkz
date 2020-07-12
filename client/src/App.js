@@ -13,8 +13,7 @@ const App = () => {
         <div className='App'>
             <Router>
                 <Route exact path='/auth/:auth' component={Auth} />
-                <Route exact path='/' component={Dashboard} />
-                <Route exact path='/:navState' component={Dashboard} />
+                <Route exact path='/:username' component={Dashboard} />
             </Router>
         </div>
     );
