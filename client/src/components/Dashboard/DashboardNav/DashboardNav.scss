@@ -17,6 +17,7 @@
 
         &:hover {
             padding-left: 1em;
+            color: $cta-background;
             border-left: 2px solid $cta-background;
             font-weight: 500;
         }

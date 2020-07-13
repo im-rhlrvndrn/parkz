@@ -8,10 +8,12 @@ const DashboardNav = () => {
     const [activeItem, setAciveItem] = useState(null);
     return (
         <div id='dashboardNav'>
-            <NavLink to='/profile'>profile</NavLink>
-            <NavLink to='/bookings'>bookings</NavLink>
-            <NavLink to='/settings'>settings</NavLink>
-            <NavLink to='/logout'>logout</NavLink>
+            <div className='dashboardNavWrapper'>
+                <NavLink to='/im_rhlrvndrn'>profile</NavLink>
+                <NavLink to='/bookings'>bookings</NavLink>
+                <NavLink to='/settings'>settings</NavLink>
+                <NavLink to='/logout'>logout</NavLink>
+            </div>
         </div>
     );
 };

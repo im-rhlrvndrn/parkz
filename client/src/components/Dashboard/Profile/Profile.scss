@@ -1,16 +1,17 @@
 @import '../../GlobalStyles/Mixins.scss';
 
 .profile {
-    padding: 0 2em;
+    padding: 2em 0;
 
     &_header {
+        visibility: hidden;
         height: max-content;
         display: flex;
 
         img {
             margin-right: 2em;
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
             box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -24,6 +25,7 @@
             justify-content: center;
 
             h1 {
+                font-size: 2em;
                 svg {
                     margin-left: 1em;
                     cursor: pointer;
