@@ -3,14 +3,14 @@
 #dashboard {
     width: 100%;
     min-height: 100vh;
-    max-height: max-content;
     background-color: $primary-background;
     @include flex();
 
     .dashboardCompWrapper {
-        width: 80%;
-        // margin: 0 auto;
+        width: 55%;
         min-height: 100vh;
+        height: auto;
+        // overflow: hidden !important;
         background: $primary-background;
         padding: 2em;
     }

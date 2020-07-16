@@ -10,8 +10,9 @@ const DashboardNav = () => {
         <div id='dashboardNav'>
             <div className='dashboardNavWrapper'>
                 <NavLink to='/im_rhlrvndrn'>profile</NavLink>
-                <NavLink to='/bookings'>bookings</NavLink>
-                <NavLink to='/settings'>settings</NavLink>
+                <NavLink to='/listings/im_rhlrvndrn'>listings</NavLink>
+                <NavLink to='/bookings/im_rhlrvndrn'>bookings</NavLink>
+                <NavLink to='/settings/im_rhlrvndrn'>settings</NavLink>
                 <NavLink to='/logout'>logout</NavLink>
             </div>
         </div>

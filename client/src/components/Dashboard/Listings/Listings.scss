@@ -1,0 +1,21 @@
+@import '../../GlobalStyles/Mixins.scss';
+
+.listingsWrapper {
+    width: 100%;
+    height: auto;
+    min-height: 90vh;
+
+    input {
+        display: block;
+        width: 100%;
+        border-radius: 4px;
+        background-color: $primary-text;
+        caret-color: $primary-background;
+        color: $primary-background;
+    }
+
+    .listings {
+        visibility: hidden;
+        margin: 2em 0 0 0;
+    }
+}
