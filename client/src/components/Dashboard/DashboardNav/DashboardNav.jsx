@@ -9,7 +9,7 @@ const DashboardNav = () => {
         <div id='dashboardNav'>
             <div className='dashboardNavWrapper'>
                 <NavLink to='/user/im_rhlrvndrn'>profile</NavLink>
-                <NavLink to='/listings/im_rhlrvndrn'>listings</NavLink>
+                <NavLink to='/listings/im_rhlrvndrn'>find a parking slot</NavLink>
                 <NavLink to='/bookings/im_rhlrvndrn'>bookings</NavLink>
                 <NavLink to='/settings/im_rhlrvndrn'>settings</NavLink>
                 <NavLink to='/logout'>logout</NavLink>

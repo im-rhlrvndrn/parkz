@@ -24,6 +24,7 @@ const ListingDetails = ({ listingDetails }) => {
             opacity: 0,
             y: '-10px',
             ease: 'power3.InOut',
+            delay: 0,
         }).from(ctaBtn, 0.4, { opacity: 0, y: '67px', ease: 'power3.InOut' }, 1);
     }, [listingDetails.name]);
     return (
