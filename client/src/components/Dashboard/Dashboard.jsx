@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 // SCSS files
 import './Dashboard.scss';
@@ -9,7 +9,6 @@ import Profile from './Profile/Profile';
 import Listings from './Listings/Listings';
 
 const Dashboard = (props) => {
-    // const [navState, setNavState] = useState('profile');
     const navState = props.match.params.navState;
     const username = props.match.params.username;
     return (
@@ -17,8 +16,8 @@ const Dashboard = (props) => {
             <DashboardNav />
             <div className='dashboardCompWrapper'>
                 {navState === 'listings' ? (
-                    <Listings />
-                ) : username === 'im_rhlrvndrn' ? (
+                    <Listings username={username} />
+                ) : navState === 'user' ? (
                     <Profile />
                 ) : null}
             </div>

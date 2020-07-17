@@ -15,7 +15,6 @@ const App = () => {
             <Router>
                 <Route exact path='/' component={Home} />
                 <Route exact path='/auth/:auth' component={Auth} />
-                <Route exact path='/:username' component={Dashboard} />
                 <Route exact path='/:navState/:username' component={Dashboard} />
             </Router>
         </div>

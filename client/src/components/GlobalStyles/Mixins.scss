@@ -30,7 +30,6 @@ $mobile: 500px;
 
 @mixin flex {
     display: flex;
-    align-items: center;
 }
 
 @mixin flexDirectionColumn {

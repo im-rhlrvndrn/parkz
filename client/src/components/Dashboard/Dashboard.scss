@@ -3,15 +3,35 @@
 #dashboard {
     width: 100%;
     min-height: 100vh;
+    height: auto;
     background-color: $primary-background;
     @include flex();
 
     .dashboardCompWrapper {
-        width: 55%;
+        width: 80%;
         min-height: 100vh;
-        height: auto;
-        // overflow: hidden !important;
+        max-height: 100vh;
+        overflow-y: auto;
         background: $primary-background;
         padding: 2em;
     }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-resizer {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $secondary-background;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $cta-background;
 }

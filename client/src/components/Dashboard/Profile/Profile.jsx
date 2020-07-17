@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { TweenMax, TimelineLite, Power3 } from 'gsap';
+import { gsap } from 'gsap';
 
 // SCSS files
 import './Profile.scss';
@@ -11,14 +11,14 @@ const Profile = () => {
     let profile_header = useRef(null);
     let info = useRef(null);
 
-    const t1 = new TimelineLite();
+    const t1 = new gsap.timeline();
 
     useEffect(() => {
-        TweenMax.to(profile_header, 0, { css: { visibility: 'visible' } });
-        t1.from(profile_header.children[0], 1, { y: '-40px', ease: Power3.easeOut })
-            .from(info.children[0], 1, { opacity: 0, y: '40px', ease: Power3.easeInOut }, 0.2)
-            .from(info.children[1], 1, { opacity: 0, y: '30px', ease: Power3.easeInOut }, 0.4);
-    }, []);
+        gsap.to(profile_header, 0, { css: { visibility: 'visible' } });
+        t1.from(profile_header.children[0], 0.4, { y: '-40px', ease: 'power3.Out' })
+            .from(info.children[0], 0.4, { opacity: 0, y: '40px', ease: 'power3.InOut' }, 0.2)
+            .from(info.children[1], 0.4, { opacity: 0, y: '30px', ease: 'power3.InOut' }, 0.4);
+    }, [t1]);
 
     return (
         <>

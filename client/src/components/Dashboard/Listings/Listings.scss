@@ -1,21 +1,28 @@
 @import '../../GlobalStyles/Mixins.scss';
 
-.listingsWrapper {
-    width: 100%;
-    height: auto;
-    min-height: 90vh;
+.listingsComponent {
+    @include flex();
+    position: relative;
 
-    input {
-        display: block;
-        width: 100%;
-        border-radius: 4px;
-        background-color: $primary-text;
-        caret-color: $primary-background;
-        color: $primary-background;
-    }
+    .listingsWrapper {
+        width: 60%;
+        margin-right: 2em;
+        height: auto;
+        min-height: 90vh;
 
-    .listings {
-        visibility: hidden;
-        margin: 2em 0 0 0;
+        input {
+            display: block;
+            width: 100%;
+            height: 50px;
+            border-radius: 4px;
+            background-color: $primary-text;
+            caret-color: $primary-background;
+            color: $primary-background;
+        }
+
+        .listings {
+            visibility: hidden;
+            margin: 2em 0 0 0;
+        }
     }
 }
