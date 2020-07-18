@@ -7,6 +7,7 @@ import './Dashboard.scss';
 import DashboardNav from './DashboardNav/DashboardNav';
 import Profile from './Profile/Profile';
 import Listings from './Listings/Listings';
+import Bookings from './Bookings/Bookings';
 
 const Dashboard = (props) => {
     const navState = props.match.params.navState;
@@ -19,6 +20,8 @@ const Dashboard = (props) => {
                     <Listings username={username} />
                 ) : navState === 'user' ? (
                     <Profile />
+                ) : navState === 'bookings' ? (
+                    <Bookings />
                 ) : null}
             </div>
         </div>

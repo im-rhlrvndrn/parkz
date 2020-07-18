@@ -22,7 +22,7 @@ const ListingDetails = ({ listingDetails }) => {
             duration: 0.4,
             stagger: 0.15,
             opacity: 0,
-            y: '-10px',
+            y: '-30px',
             ease: 'power3.InOut',
             delay: 0,
         }).from(ctaBtn, 0.4, { opacity: 0, y: '67px', ease: 'power3.InOut' }, 1);

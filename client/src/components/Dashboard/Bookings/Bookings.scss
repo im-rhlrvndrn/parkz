@@ -1,0 +1,26 @@
+@import '../../GlobalStyles/Mixins.scss';
+
+.bookingOverview {
+    @include flex();
+    width: 100%;
+    height: auto;
+
+    &_details {
+        width: 33.333%;
+        padding: 4em 2em;
+        background-color: $secondary-background;
+        margin-left: 1em;
+        text-align: center;
+
+        span {
+            display: inline-block;
+            margin-top: 2em;
+            color: $cta-background;
+            // font-size: 1rem;
+        }
+    }
+
+    :nth-child(1) {
+        margin: 0;
+    }
+}
