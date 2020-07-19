@@ -4,8 +4,6 @@
     visibility: hidden;
     overflow: auto;
     position: sticky;
-    right: 0;
-    top: 0;
     height: calc(100vh - 3em);
     border-radius: 10px;
     width: 40%;
@@ -62,6 +60,7 @@
             padding: 1.5em 2em;
             background-color: $cta-background;
             color: $primary-background;
+            font-weight: 500;
         }
     }
 
