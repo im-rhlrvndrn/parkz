@@ -10,7 +10,8 @@ const Listing = (props) => {
             className='listing'
             onClick={(e) => {
                 props.setListingDetails(props.list);
-                e.target.style.border = '2px solid #283042';
+                e.target.style.border = '2px solid #2ecadd';
+                e.target.style.boxShadow = '2px 2px 10px -10px #2ecadd';
             }}
         >
             <img src={props.list.img} alt='' />

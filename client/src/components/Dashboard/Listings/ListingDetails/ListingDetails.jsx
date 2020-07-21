@@ -8,8 +8,6 @@ const ListingDetails = ({ listingDetails }) => {
     let listingDetailsRef = useRef(null);
 
     useEffect(() => {
-        gsap.to(listingDetailsRef, 0, { css: { visibility: 'visible' } });
-
         let animatedArray = [];
 
         if (listingDetailsRef) {

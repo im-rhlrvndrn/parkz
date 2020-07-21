@@ -58,16 +58,8 @@ const Listings = (props) => {
 
     // ! Add another array that filters the listing when the user types in the search input
     useEffect(() => {
-        gsap.to(listingsDiv, 0, { css: { visibility: 'visible' } });
-
-        let animatedArray = [];
-
-        if (listingsDiv) {
-            listingsDiv.childNodes.forEach((node) => animatedArray.push(node));
-        }
-
         const tl = new gsap.timeline();
-        tl.from(animatedArray, {
+        tl.from('.listing', {
             duration: 0.4,
             stagger: 0.15,
             opacity: 0,
@@ -79,6 +71,7 @@ const Listings = (props) => {
     return (
         <div className='listingsComponent'>
             <div className='listingsWrapper'>
+                <h1>Find a perfect parking slot</h1>
                 <input
                     type='text'
                     name='search'
