@@ -6,6 +6,9 @@
     height: auto;
     background-color: $primary-background;
     @include flex();
+    @include tablet {
+        display: block;
+    }
 
     .dashboardCompWrapper {
         width: 80%;
@@ -14,6 +17,9 @@
         overflow-y: auto;
         background: $primary-background;
         padding: 2em;
+        @include tablet {
+            width: 100%;
+        }
     }
 }
 

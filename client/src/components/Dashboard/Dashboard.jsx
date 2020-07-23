@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // SCSS files
 import './Dashboard.scss';
@@ -10,18 +10,20 @@ import Listings from './Listings/Listings';
 import Bookings from './Bookings/Bookings';
 
 const Dashboard = (props) => {
+    const [isNavOpen, setIsNavOpen] = useState(false);
+
     const navState = props.match.params.navState;
     const username = props.match.params.username;
     return (
         <div id='dashboard'>
-            <DashboardNav />
+            <DashboardNav isNavOpen={isNavOpen} />
             <div className='dashboardCompWrapper'>
                 {navState === 'listings' ? (
-                    <Listings username={username} />
+                    <Listings setIsNavOpen={setIsNavOpen} navState={navState} username={username} />
                 ) : navState === 'user' ? (
-                    <Profile />
+                    <Profile setIsNavOpen={setIsNavOpen} navState={navState} />
                 ) : navState === 'bookings' ? (
-                    <Bookings />
+                    <Bookings setIsNavOpen={setIsNavOpen} navState={navState} />
                 ) : null}
             </div>
         </div>

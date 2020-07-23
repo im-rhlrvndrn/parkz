@@ -7,6 +7,10 @@ import './Listings.scss';
 // React components
 import Listing from './Listing/Listing';
 import ListingDetails from './ListingDetails/ListingDetails';
+import DashboardCompHeader from '../DashboardCompHeader/DashboardCompHeader';
+
+// Utils
+import useWindowSize from '../../../utils/useWindowSize';
 
 const Listings = (props) => {
     const [listingDetails, setListingDetails] = useState({});
@@ -69,29 +73,32 @@ const Listings = (props) => {
     }, []);
 
     return (
-        <div className='listingsComponent'>
-            <div className='listingsWrapper'>
-                <h1>Find a perfect parking slot</h1>
-                <input
-                    type='text'
-                    name='search'
-                    id='search'
-                    autoComplete='off'
-                    placeholder='Search for parking lots near you'
-                />
-                <div className='listings' ref={(el) => (listingsDiv = el)}>
-                    {listingsArray.map((list, index) => (
-                        <Listing
-                            list={list}
-                            key={index}
-                            username={props.username}
-                            setListingDetails={setListingDetails}
-                        />
-                    ))}
+        <>
+            {useWindowSize().width < 1100 && <DashboardCompHeader navState={props.navState} />}
+            <div className='listingsComponent'>
+                <div className='listingsWrapper'>
+                    <h1>Find a perfect parking slot</h1>
+                    <input
+                        type='text'
+                        name='search'
+                        id='search'
+                        autoComplete='off'
+                        placeholder='Search for parking lots near you'
+                    />
+                    <div className='listings' ref={(el) => (listingsDiv = el)}>
+                        {listingsArray.map((list, index) => (
+                            <Listing
+                                list={list}
+                                key={index}
+                                username={props.username}
+                                setListingDetails={setListingDetails}
+                            />
+                        ))}
+                    </div>
                 </div>
+                <ListingDetails listingDetails={listingDetails} />
             </div>
-            <ListingDetails listingDetails={listingDetails} />
-        </div>
+        </>
     );
 };
 

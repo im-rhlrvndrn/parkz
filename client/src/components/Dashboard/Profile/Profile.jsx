@@ -6,8 +6,12 @@ import './Profile.scss';
 
 // React components
 import Settings from '../../../React-Icons/SettingsIcon';
+import DashboardCompHeader from '../DashboardCompHeader/DashboardCompHeader';
 
-const Profile = () => {
+// Utils
+import useWindowSize from '../../../utils/useWindowSize';
+
+const Profile = ({ navState, setIsNavOpen }) => {
     const t1 = new gsap.timeline();
 
     useEffect(() => {
@@ -24,10 +28,13 @@ const Profile = () => {
                 { opacity: 0, y: '30px', ease: 'power3.InOut' },
                 0.4
             );
-    }, [t1]);
+    }, [t1, window.innerWidth]);
 
     return (
         <>
+            {useWindowSize().width < 1100 && (
+                <DashboardCompHeader navState={navState} setIsNavOpen={setIsNavOpen} />
+            )}
             <div className='profile'>
                 <div className='profile_header'>
                     <img
