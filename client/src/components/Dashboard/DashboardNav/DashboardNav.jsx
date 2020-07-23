@@ -12,7 +12,7 @@ const DashboardNav = ({ isNavOpen }) => {
 
     return (
         <>
-            {(isNavOpen || windowSize.width > 1100) && (
+            {(isNavOpen || windowSize.width > 1024) && (
                 <div id='dashboardNav'>
                     <div className='dashboardNavWrapper'>
                         <NavLink to='/user/im_rhlrvndrn'>profile</NavLink>

@@ -10,6 +10,7 @@ $primary-text: #c4c8d4;
 $danger: #ff0e57;
 
 // Responsive breakpoints
+$lg-tablet: 1024px;
 $tablet: 800px;
 $mobile: 500px;
 
@@ -81,6 +82,12 @@ $mobile: 500px;
     grid-template-columns: repeat(auto-fill, minmax($minWidth, 1fr));
     grid-auto-rows: $rowHeight;
     grid-gap: 20px;
+}
+
+@mixin lg-tablet {
+    @media screen and (max-width: $lg-tablet) {
+        @content;
+    }
 }
 
 @mixin tablet {
