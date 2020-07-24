@@ -12,7 +12,11 @@ const Auth = (props) => {
 
     return (
         <div className='authWrapper'>
-            <div className='authFormWrapper'>
+            <div className='authInfo'>
+                <p>This is an example of mix-blend-mode</p>
+            </div>
+
+            {/* <div className='authFormWrapper'>
                 <h1>{authState === 'login' ? 'Welcome Back' : 'Create an account'}</h1>
                 <form>
                     {authState === 'register' && <AuthInput htmlFor='full name' />}
@@ -43,8 +47,8 @@ const Auth = (props) => {
                         </div>
                     )}
                 </form>
-            </div>
-            <div className='image'></div>
+            </div> */}
+            {/* <div className='image'></div> */}
         </div>
     );
 };

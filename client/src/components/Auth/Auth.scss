@@ -16,7 +16,25 @@
     height: 100vh;
     @include flex();
     position: relative;
+    padding: 1em;
     background-color: $primary-background;
+
+    .authInfo {
+        position: relative;
+        height: 100%;
+        width: 25%;
+        border-radius: 5px;
+        background-color: $cta-background;
+
+        p {
+            position: absolute;
+            top: 100;
+            right: 0;
+            transform: translateX(50%);
+            mix-blend-mode: difference;
+            font-weight: 700;
+        }
+    }
 
     .image {
         width: 70%;

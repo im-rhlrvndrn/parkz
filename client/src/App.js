@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { gsap } from 'gsap';
 
 // SCSS file
@@ -17,9 +17,11 @@ const App = () => {
     return (
         <div className='App'>
             <Router>
-                <Route exact path='/' component={Home} />
-                <Route exact path='/auth/:auth' component={Auth} />
-                <Route exact path='/:navState/:username' component={Dashboard} />
+                <Switch>
+                    <Route exact path='/' component={Home} />
+                    <Route exact path='/auth/:auth' component={Auth} />
+                    <Route exact path='/:navState/:username' component={Dashboard} />
+                </Switch>
             </Router>
         </div>
     );
