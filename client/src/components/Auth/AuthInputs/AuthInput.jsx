@@ -11,7 +11,7 @@ const AuthInput = ({ htmlFor, type }) => {
             <label className={isFocused && 'focused'} htmlFor={htmlFor}>
                 {`${htmlFor[0].toUpperCase()}${htmlFor.slice(1)}`}
             </label>
-            <input type={!type ? 'text' : type} name={htmlFor} />
+            <input type={!type ? 'text' : type} name={htmlFor} id={htmlFor} />
         </div>
     );
 };

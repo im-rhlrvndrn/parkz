@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import gsap from 'gsap';
 
 // SCSS files
@@ -8,13 +8,14 @@ import './Listings.scss';
 import Listing from './Listing/Listing';
 import ListingDetails from './ListingDetails/ListingDetails';
 import DashboardCompHeader from '../DashboardCompHeader/DashboardCompHeader';
+import BookingForm from '../../Modals/BookingForm/BookingForm';
 
 // Utils
 import useWindowSize from '../../../utils/useWindowSize';
 
 const Listings = (props) => {
     const [listingDetails, setListingDetails] = useState({});
-    let listingsDiv = useRef(null);
+    const [isBookingFormActive, setIsBookingFormActive] = useState(false);
     const listingsArray = [
         {
             img:
@@ -85,7 +86,7 @@ const Listings = (props) => {
                         autoComplete='off'
                         placeholder='Search for parking lots near you'
                     />
-                    <div className='listings' ref={(el) => (listingsDiv = el)}>
+                    <div className='listings'>
                         {listingsArray.map((list, index) => (
                             <Listing
                                 list={list}
@@ -96,8 +97,12 @@ const Listings = (props) => {
                         ))}
                     </div>
                 </div>
-                <ListingDetails listingDetails={listingDetails} />
+                <ListingDetails
+                    setIsBookingFormActive={setIsBookingFormActive}
+                    listingDetails={listingDetails}
+                />
             </div>
+            {isBookingFormActive && <BookingForm />}
         </>
     );
 };

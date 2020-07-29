@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 // SCSS files
 import './ListingDetails.scss';
 
-const ListingDetails = ({ listingDetails }) => {
+const ListingDetails = ({ listingDetails, setIsBookingFormActive }) => {
     let listingDetailsRef = useRef(null);
 
     useEffect(() => {
@@ -25,6 +25,7 @@ const ListingDetails = ({ listingDetails }) => {
             delay: 0,
         }).from(ctaBtn, 0.4, { opacity: 0, y: '67px', ease: 'power3.InOut' }, 1);
     }, [listingDetails.name]);
+
     return (
         <div className='listingDetails' ref={(el) => (listingDetailsRef = el)}>
             {listingDetails.img ? (
@@ -69,7 +70,7 @@ const ListingDetails = ({ listingDetails }) => {
                     </div>
                     <div className='cta'>
                         <button className='secondary'>Close</button>
-                        <button>Book now</button>
+                        <button onClick={() => setIsBookingFormActive(true)}>Book now</button>
                     </div>
                 </>
             ) : (
