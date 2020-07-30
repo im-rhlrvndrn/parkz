@@ -102,7 +102,12 @@ const Listings = (props) => {
                     listingDetails={listingDetails}
                 />
             </div>
-            {isBookingFormActive && <BookingForm />}
+            {isBookingFormActive && (
+                <BookingForm
+                    setIsBookingFormActive={setIsBookingFormActive}
+                    isBookingFormActive={isBookingFormActive}
+                />
+            )}
         </>
     );
 };

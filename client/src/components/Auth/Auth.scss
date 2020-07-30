@@ -94,28 +94,6 @@
                 text-align: center;
             }
 
-            .inputContainer {
-                position: relative;
-
-                label {
-                    margin: 0;
-                    position: absolute;
-                    transform: translate(15px, 30px);
-                    font-weight: 300;
-                    transition: 0.4s;
-                    z-index: 0;
-                }
-
-                input {
-                    z-index: 1;
-                    width: 100%;
-                    background: transparent;
-                    border: none;
-                    border-bottom: 1px solid $primary-text;
-                    margin: 20px 0;
-                }
-            }
-
             button {
                 cursor: pointer;
                 margin: 40px auto 20px auto;

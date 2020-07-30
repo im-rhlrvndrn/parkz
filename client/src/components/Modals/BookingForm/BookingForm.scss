@@ -1,34 +1,46 @@
 @import '../../Auth/Auth.scss';
 
-#bookingForm {
-    width: 50%;
-    height: auto;
+.bookingFormOverlay {
+    visibility: hidden;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    background-color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
 
-    .inputContainer {
-        position: relative;
+    #bookingForm {
+        padding: 2rem;
+        width: 50%;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        background-color: $primary-background;
+        border-radius: 5px;
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+            0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+            0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
 
-        label {
-            margin: 0;
-            position: absolute;
-            transform: translate(15px, 30px);
-            font-weight: 300;
-            transition: 0.4s;
-            z-index: 0;
+        button {
+            background-color: $cta-background;
+            border-radius: 5px;
+            color: $primary-background;
+            padding: 1em 2em;
+            display: block;
+            margin-left: auto;
+            font-weight: 500;
         }
 
-        input {
-            z-index: 1;
-            width: 100%;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid $primary-text;
-            margin: 20px 0;
+        .subFormGroup {
+            display: flex;
+            justify-content: space-between;
+
+            .inputContainer {
+                width: 32%;
+            }
         }
     }
 }
