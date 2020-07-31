@@ -1,46 +1,77 @@
-@import '../../Auth/Auth.scss';
+@import '../../GlobalStyles/Mixins.scss';
 
-.bookingFormOverlay {
-    visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+.bookingForm {
+    h1 {
+        padding: 0 2rem;
+        margin-bottom: 3rem;
+        @include mobile {
+            padding: 0;
+        }
+    }
+
+    .parking_lot_details {
+        position: relative;
+        max-height: 8rem;
+        background-color: $secondary-background;
+        width: max-content;
+        padding: 1rem;
+        border-radius: 5px;
+        margin: 0 0 2rem 2rem;
+        @include flexAlignCenter();
+
+        @include mobile {
+            margin: 0;
+            width: 100%;
+        }
+
+        img {
+            width: 5rem;
+            height: 5rem;
+            object-fit: cover;
+            margin-right: 2rem;
+            border-radius: 5px;
+            @include mobile {
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+
+        .parkinglot_info {
+            h1 {
+                font-size: 1.2rem;
+                padding: 0;
+                margin-bottom: 0.8rem;
+                @include mobile {
+                    font-size: 1rem;
+                }
+            }
+            p {
+                @include mobile {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
 
     #bookingForm {
-        padding: 2rem;
-        width: 50%;
+        padding: 0 2rem;
+        width: 100%;
         height: auto;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 1000;
         background-color: $primary-background;
         border-radius: 5px;
-        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-            0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-            0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+        @include mobile {
+            padding: 0;
+        }
 
         button {
+            min-height: 55px;
             background-color: $cta-background;
             border-radius: 5px;
             color: $primary-background;
-            padding: 1em 2em;
+            padding: 1rem 2rem;
             display: block;
             margin-left: auto;
             font-weight: 500;
-        }
-
-        .subFormGroup {
-            display: flex;
-            justify-content: space-between;
-
-            .inputContainer {
-                width: 32%;
-            }
         }
     }
 }

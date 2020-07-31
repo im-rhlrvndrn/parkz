@@ -15,7 +15,6 @@ import useWindowSize from '../../../utils/useWindowSize';
 
 const Listings = (props) => {
     const [listingDetails, setListingDetails] = useState({});
-    const [isBookingFormActive, setIsBookingFormActive] = useState(false);
     const listingsArray = [
         {
             img:
@@ -98,16 +97,16 @@ const Listings = (props) => {
                     </div>
                 </div>
                 <ListingDetails
-                    setIsBookingFormActive={setIsBookingFormActive}
+                    setParkinglotDetails={props.setParkinglotDetails}
                     listingDetails={listingDetails}
                 />
             </div>
-            {isBookingFormActive && (
+            {/* {isBookingFormActive && (
                 <BookingForm
                     setIsBookingFormActive={setIsBookingFormActive}
                     isBookingFormActive={isBookingFormActive}
                 />
-            )}
+            )} */}
         </>
     );
 };

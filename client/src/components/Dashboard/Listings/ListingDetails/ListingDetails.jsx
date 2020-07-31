@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from 'react';
+import { useHistory } from 'react-router-dom';
 import { gsap } from 'gsap';
 
 // SCSS files
 import './ListingDetails.scss';
 
-const ListingDetails = ({ listingDetails, setIsBookingFormActive }) => {
+const ListingDetails = ({ listingDetails, setParkinglotDetails }) => {
     let listingDetailsRef = useRef(null);
+    let history = useHistory();
 
     useEffect(() => {
         let animatedArray = [];
@@ -28,7 +30,7 @@ const ListingDetails = ({ listingDetails, setIsBookingFormActive }) => {
 
     return (
         <div className='listingDetails' ref={(el) => (listingDetailsRef = el)}>
-            {listingDetails.img ? (
+            {listingDetails.name ? (
                 <>
                     <img src={listingDetails.img} alt='' />
                     <div className='listingInfo'>
@@ -70,7 +72,14 @@ const ListingDetails = ({ listingDetails, setIsBookingFormActive }) => {
                     </div>
                     <div className='cta'>
                         <button className='secondary'>Close</button>
-                        <button onClick={() => setIsBookingFormActive(true)}>Book now</button>
+                        <button
+                            onClick={() => {
+                                setParkinglotDetails({ ...listingDetails });
+                                history.push('/booking/new');
+                            }}
+                        >
+                            Book now
+                        </button>
                     </div>
                 </>
             ) : (
