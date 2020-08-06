@@ -31,7 +31,7 @@ const Bookings = ({ navState, setIsNavOpen }) => {
                   skewX: -2,
                   ease: 'power3.InOut',
               });
-    }, []);
+    }, [windowSize.width]);
 
     return (
         <>

@@ -8,13 +8,13 @@ import './Listings.scss';
 import Listing from './Listing/Listing';
 import ListingDetails from './ListingDetails/ListingDetails';
 import DashboardCompHeader from '../DashboardCompHeader/DashboardCompHeader';
-import BookingForm from '../../Modals/BookingForm/BookingForm';
 
 // Utils
 import useWindowSize from '../../../utils/useWindowSize';
 
 const Listings = (props) => {
     const [listingDetails, setListingDetails] = useState({});
+    const [filterValue, setFilterValue] = useState('');
     const listingsArray = [
         {
             img:
@@ -59,6 +59,7 @@ const Listings = (props) => {
             location: 'Thane',
         },
     ];
+    const filterArray = [];
 
     // ! Add another array that filters the listing when the user types in the search input
     useEffect(() => {
@@ -83,17 +84,36 @@ const Listings = (props) => {
                         name='search'
                         id='search'
                         autoComplete='off'
+                        onChange={(e) => {
+                            setFilterValue(e.target.value);
+                            console.log(filterValue);
+                            listingsArray.forEach((item) => {
+                                if (item.name.toLowerCase().includes(e.target.value)) {
+                                    filterArray.push(item);
+                                }
+                            });
+                            console.log(filterArray);
+                        }}
                         placeholder='Search for parking lots near you'
                     />
                     <div className='listings'>
-                        {listingsArray.map((list, index) => (
-                            <Listing
-                                list={list}
-                                key={index}
-                                username={props.username}
-                                setListingDetails={setListingDetails}
-                            />
-                        ))}
+                        {filterValue === ''
+                            ? listingsArray.map((list, index) => (
+                                  <Listing
+                                      list={list}
+                                      key={index}
+                                      username={props.username}
+                                      setListingDetails={setListingDetails}
+                                  />
+                              ))
+                            : filterArray.map((list, index) => (
+                                  <Listing
+                                      list={list}
+                                      key={index}
+                                      username={props.username}
+                                      setListingDetails={setListingDetails}
+                                  />
+                              ))}
                     </div>
                 </div>
                 <ListingDetails
@@ -101,12 +121,6 @@ const Listings = (props) => {
                     listingDetails={listingDetails}
                 />
             </div>
-            {/* {isBookingFormActive && (
-                <BookingForm
-                    setIsBookingFormActive={setIsBookingFormActive}
-                    isBookingFormActive={isBookingFormActive}
-                />
-            )} */}
         </>
     );
 };

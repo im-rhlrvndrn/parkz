@@ -15,7 +15,8 @@ const Dashboard = (props) => {
     const [parkinglotDetails, setParkinglotDetails] = useState({});
 
     const navState = props.match.params.navState;
-    const username = props.match.params.username;
+    const username = props.match.params.username; // todo: Originally the username must be the user's actual data
+    // todo: fetched from the server (json-server)
     return (
         <div id='dashboard'>
             <DashboardNav isNavOpen={isNavOpen} />
@@ -36,6 +37,7 @@ const Dashboard = (props) => {
                         parkinglotDetails={parkinglotDetails}
                         setIsNavOpen={setIsNavOpen}
                         navState={navState}
+                        username={username}
                     />
                 ) : null}
             </div>

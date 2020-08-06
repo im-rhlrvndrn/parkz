@@ -72,6 +72,10 @@
             display: block;
             margin-left: auto;
             font-weight: 500;
+
+            @include mobile {
+                width: 100%;
+            }
         }
     }
 }

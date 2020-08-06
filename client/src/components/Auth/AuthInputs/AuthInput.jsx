@@ -10,9 +10,6 @@ const AuthInput = ({ htmlFor, type, dropdownItems, required }) => {
         `${htmlFor[0].toUpperCase()}${htmlFor.slice(1)}`
     );
 
-    const processedHtmlFor = htmlFor.split().map((item) => console.log(item));
-    console.log(processedHtmlFor);
-
     return (
         <>
             {type === 'dropdown' && dropdownItems.length ? (

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { gsap } from 'gsap';
 
 // SCSS files
@@ -7,8 +8,9 @@ import './BookingForm.scss';
 // React Components
 import AuthInput from '../../Auth/AuthInputs/AuthInput';
 
-const BookingForm = ({ parkinglotDetails }) => {
+const BookingForm = ({ parkinglotDetails, username }) => {
     let t1 = gsap.timeline();
+    const history = useHistory();
     useEffect(() => {
         t1.from('.parking_lot_details', {
             duration: 0.4,
@@ -16,6 +18,8 @@ const BookingForm = ({ parkinglotDetails }) => {
             y: '-30px',
             ease: 'power3.InOut',
         });
+
+        if (!parkinglotDetails.img) history.push(`/listings/${username}`);
     }, []);
 
     return (
